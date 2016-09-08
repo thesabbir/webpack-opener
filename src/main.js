@@ -6,17 +6,17 @@ const removeCallback = require('lodash/pull');
  * @constructor
  */
 function OpenerPlugin(url = 'http://localhost:8080') {
-    this.url = url;
+  this.url = url;
 }
 
 OpenerPlugin.prototype.apply = function (compiler) {
-    const url = this.url;
-    compiler.plugin('done', function openerCallback(stats) {
-        if (!stats.hasErrors()) {
-            removeCallback(stats.compilation.compiler._plugins.done, openerCallback);
-            opener(url);
-        }
-    });
+  const url = this.url;
+  compiler.plugin('done', function openerCallback(stats) {
+    if (!stats.hasErrors()) {
+      removeCallback(stats.compilation.compiler._plugins.done, openerCallback);
+      opener(url);
+    }
+  });
 };
 
 module.exports = OpenerPlugin;
