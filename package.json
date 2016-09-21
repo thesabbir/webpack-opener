@@ -1,6 +1,6 @@
 {
   "name": "webpack-opener",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Open webpack server in your browser when webpack compiles succesfully for first time",
   "main": "dist/main.js",
   "scripts": {
